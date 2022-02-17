@@ -12,7 +12,7 @@ starkbank.user = project;
 starkbank.language = process.env.STARKBANK_LANG;
 
 async function criarInvoices(n) {
-    invoiceList = []
+    let invoiceList = []
     for (let i = 1; i <= n; i++) {
         invoiceList.push(
             {
@@ -28,7 +28,7 @@ async function criarInvoices(n) {
 };
 
 // O intervalo de geração das invoices deve ser de 3 horas, com a última geração ocorrendo em 3*8 = 24h
-timeout = 1000*60*60*3;
+var timeout = 1000*60*60*3;
 for (let i = 0; i <= 8; i++) {
     setTimeout(criarInvoices, i*timeout, Math.floor(Math.random() * (13 - 8) + 8));
 }
