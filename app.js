@@ -2,9 +2,6 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var starkbank = require('starkbank');
-var nomeAleatorio = require('./utils/nomeAleatorio');
-var taxIdAleatorio = require('./utils/taxIdAleatorio');
 var randomInt = require('./utils/randomInt');
 var criarInvoices = require('./utils/criarInvoices');
 
