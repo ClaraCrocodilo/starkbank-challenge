@@ -2,6 +2,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var bodyParser = require('body-parser');
 var randomInt = require('./utils/randomInt');
 var criarInvoices = require('./utils/criarInvoices');
 
@@ -13,7 +14,7 @@ require('./config/starkbank');
 var app = express();
 
 app.use(logger('dev'));
-app.use(express.json());
+app.use(bodyParser.text({ type: '*/*' }));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
