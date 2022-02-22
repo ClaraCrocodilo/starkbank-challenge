@@ -5,8 +5,7 @@ var logger = require('morgan');
 var randomInt = require('./utils/randomInt');
 var criarInvoices = require('./utils/criarInvoices');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var invoiceRouter = require('./routes/invoice');
 
 require('dotenv').config();
 require('./config/starkbank');
@@ -19,8 +18,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/invoices', invoiceRouter);
 
 // O intervalo de geração das invoices deve ser de 3 horas, com a última geração ocorrendo em 3*8 = 24h
 let timeout = 1000*60*60*3;

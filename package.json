@@ -14,7 +14,8 @@
     "dotenv": "^16.0.0",
     "express": "~4.16.1",
     "morgan": "~1.9.1",
-    "starkbank": "^2.10.1"
+    "starkbank": "^2.10.1",
+    "starkbank-ecdsa": "^1.1.4"
   },
   "devDependencies": {
     "eslint": "^8.9.0",
