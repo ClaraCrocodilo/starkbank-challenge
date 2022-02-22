@@ -25,6 +25,7 @@ router.post('/', async function(req, res, next) {
                     name: account.name
                 }
             ]);
+            console.log(transfer);
         };
             res.sendStatus(200);
     } catch(err) {
