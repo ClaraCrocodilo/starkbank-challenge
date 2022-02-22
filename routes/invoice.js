@@ -37,8 +37,8 @@ router.post('/', async function(req, res, next) {
                     name: account.name
                 }
             ]);
-        res.sendStatus(200);
         };
+            res.sendStatus(200);
     } catch(err) {
         console.error(err);
         res.status(500).send(err);
